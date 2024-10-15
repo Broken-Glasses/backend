@@ -25,7 +25,13 @@ public class Member_RoomServiceImpl implements Member_RoomService {
         Room room = (Room)this.roomRepository.findById(request.getRoom_id()).orElseThrow(() -> {
             return new RuntimeException("방의 정보가 없습니다.");
         });
-        Member_Room member_room = Member_Room.builder().member(member).room(room).build();
+
+        Member_Room member_room = member_roomRepository.findByMemberAndRoom(member, room);
+
+        if (member_room == null) throw new RuntimeException("멤버와 방의 정보가 없습니다.");
+
+        member_room.setReady("준비 완료");
+
         this.member_roomRepository.save(member_room);
         return "success";
     }

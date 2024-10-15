@@ -5,6 +5,7 @@ import broken_glasses.danting.room.repository.entity.Room;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Setter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -16,11 +17,11 @@ public class Member_Room {
     private Long member_room_id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false, unique = true)
     private Member member;
 
     @ManyToOne
-    @JoinColumn(name = "room_id")
+    @JoinColumn(name = "room_id", nullable = false, unique = true)
     private Room room;
 
     private String ready;
