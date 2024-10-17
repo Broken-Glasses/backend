@@ -1,8 +1,6 @@
 package broken_glasses.danting.room.controller;
 
-import broken_glasses.danting.member.controller.dto.JoinRequest;
 import broken_glasses.danting.room.controller.dto.RoomRequest;
-import broken_glasses.danting.room.controller.dto.RoomResponse;
 import broken_glasses.danting.room.repository.entity.Room;
 import broken_glasses.danting.room.service.RoomService;
 import lombok.RequiredArgsConstructor;

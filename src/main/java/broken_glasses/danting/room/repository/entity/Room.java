@@ -1,6 +1,6 @@
 package broken_glasses.danting.room.repository.entity;
 
-import broken_glasses.danting.memberroom.repository.entity.Member_Room;
+import broken_glasses.danting.usersroom.repository.entity.Users_Room;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,5 +28,5 @@ public class Room {
 
     // User_Room과의 1:N 관계 설정
     @OneToMany(mappedBy = "room")
-    private List<Member_Room> userRooms;
+    private List<Users_Room> userRooms;
 }

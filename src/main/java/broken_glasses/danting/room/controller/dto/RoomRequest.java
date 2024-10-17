@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class RoomRequest {
-    private Long member_id;
+    private Long users_id;
     private String title;
     private Long max;
     private String status;
